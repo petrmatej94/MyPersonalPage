@@ -1,0 +1,81 @@
+﻿* {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.container {
+    margin: 10%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 100px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #c8a951;
+    color: #cccccc;
+    background-color: #333333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.image-box {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+    .image-box img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .blur {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        filter: blur(15px);
+    }
+
+.box-text {
+    font-size: 1rem;
+    margin: 1rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.github-link {
+    margin-left: auto;
+    text-decoration: none;
+    color: #ffd700; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}

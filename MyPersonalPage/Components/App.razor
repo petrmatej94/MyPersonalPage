@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="MyPersonalPage.styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <HeadOutlet />
+</head>
+
+<body>
+    <Routes />
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
+
+@code {
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; }
+
+    private async Task OnNavigateHandler(NavigationContext args)
+    {
+        await JSRuntime.InvokeVoidAsync("gtag", "config", "G-N7EF2ZVQ6Z", new { page_path = args.Path });
+    }
+}

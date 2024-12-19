@@ -1,0 +1,72 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>About me</PageTitle>
+
+<div id="nav" class="@(isCollapsed ? "collapsed" : "")" data-active-index="@activeIndex" @ref="MenuElement">
+    <div id="nav-items">
+        <div class="nav-item nav-header nav-intro @(isCollapsed ? "hidden" : "")">Hello, I'm</div>
+        <div class="nav-item nav-header nav-name @(isCollapsed ? "hidden" : "")">Petr Matej</div>
+        <div class="nav-item nav-header nav-text @(isCollapsed ? "hidden" : "")">Full Stack Developer</div>
+
+        <div class="nav-item nav-menu-item" data-selected="@(selectedIndex == 0)" data-active="@(activeIndex == 0)" @onmouseover="() => SetActiveIndex(0)" @onclick="@(() => OpenContent("about-me", 0))">
+            <i class="fas fa-user"></i> About me
+        </div>
+        <div class="nav-item nav-menu-item" data-selected="@(selectedIndex == 1)" data-active="@(activeIndex == 1)" @onmouseover="() => SetActiveIndex(1)" @onclick="@(() => OpenContent("portfolio", 1))">
+            <i class="fas fa-briefcase"></i> Portfolio
+        </div>
+    </div>
+    <div id="menu-background-pattern"></div>
+</div>
+
+<div id="content" class="@contentClass">
+    @if (currentContent == "about-me")
+    {
+        <div class="content-section fade-in">
+            <Resume />
+        </div>
+    }
+    else if (currentContent == "portfolio")
+    {
+        <div class="content-section fade-in">
+            <Portfolio />
+        </div>
+    }
+</div>
+
+
+@code {
+    private bool isCollapsed = false;
+    private string currentContent = string.Empty;
+    private string contentClass = string.Empty;
+    private int activeIndex = -1;
+    private ElementReference MenuElement;
+    private int selectedIndex = -1;
+
+    private async Task OpenContent(string content, int index)
+    {
+        contentClass = "fade-out";
+        await Task.Delay(500);
+
+        isCollapsed = true;
+        currentContent = content;
+        contentClass += " active";
+        activeIndex = index;
+        selectedIndex = index;
+        StateHasChanged();
+    }
+
+    private void SetActiveIndex(int index)
+    {
+        activeIndex = index;
+        UpdateMenuBackground();
+    }
+
+    private void UpdateMenuBackground()
+    {
+        JSRuntime.InvokeVoidAsync("updateMenuBackground", MenuElement, activeIndex);
+    }
+
+    [Inject]
+    private IJSRuntime JSRuntime { get; set; }
+}
