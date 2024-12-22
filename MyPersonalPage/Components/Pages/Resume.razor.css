@@ -91,6 +91,7 @@ h1, h2, h3, h4 {
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
     margin-right: 50px;
+    width: fit-content;
 }
 
 .btn-primary {
@@ -111,7 +112,6 @@ h1, h2, h3, h4 {
     text-align: center;
     width: 90vw;
     max-width: 90%;
-
 }
 
     .journey h3, .interests h3 {
@@ -363,6 +363,10 @@ a.btn {
         padding: 0px;
     }
 
+    .skills-summary {
+        margin: 0px;
+    }
+
     .profile img {
         width: 150px;
         height: auto;
@@ -391,14 +395,21 @@ a.btn {
     }
 
     .buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
+        justify-content: center;
+        align-content: center;
     }
 
     .btn {
         font-size: 0.9rem;
         padding: 8px 15px;
     }
+
+    .btn-primary {
+        margin: 0px;
+    }
+
 
     .text-content li {
         font-size: 0.8rem;
