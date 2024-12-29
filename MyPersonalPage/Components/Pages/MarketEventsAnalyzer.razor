@@ -59,7 +59,7 @@
 		}
 		else
 		{
-			<MudText>Search the data first...</MudText>
+			<MudText>Search the data in the table below first...</MudText>
 		}
 	</div>
 
@@ -78,6 +78,10 @@
 		{
 			<MudChart ChartType="ChartType.Pie" Width="100px" Height="80px" InputData="@_upTicksCategorized.Values.ToArray()" InputLabels="@_upTicksCategorized.Keys.ToArray()"></MudChart>
 		}
+		else
+		{
+			<MudText>Search the data in the table below first...</MudText>
+		}
 	</div>
 	<div class="box small-box">
 		<MudText Typo="Typo.h6">Average down move</MudText>
@@ -90,6 +94,10 @@
 		@if (_downTicksCategorized != null)
 		{
 			<MudChart ChartType="ChartType.Pie" Width="100px" Height="80px" InputData="@_downTicksCategorized.Values.ToArray()" InputLabels="@_downTicksCategorized.Keys.ToArray()"></MudChart>
+		}
+		else
+		{
+			<MudText>Search the data in the table below first...</MudText>
 		}
 	</div>
 
