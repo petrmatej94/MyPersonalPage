@@ -1,0 +1,290 @@
+﻿Date;EventName;Currency;OtherEventsAtTheSameTime;Actual;Expected;Diff;UpTicksIn_1m;DownTicksIn_1m;UpTicksIn_5m;DownTicksIn_5m;UpTicksIn_10m;DownTicksIn_10m;UpTicksIn_15m;DownTicksIn_15m;UpTicksIn_30m;DownTicksIn_30m;UpTicksIn_60m;DownTicksIn_60m;UpTicksIn_120m;DownTicksIn_120m
+03.01.2024 15:00;ISM Manufacturing PMI;USD;USD_JOLTS Job Openings;47,4;47,2;2;48;-7;48;-7;48;-7;48;-7;48;-8;48;-32;48;-32
+03.01.2024 15:00;JOLTS Job Openings;USD;USD_ISM Manufacturing PMI;8,79;8,84;-5;48;-7;48;-7;48;-7;48;-7;48;-8;48;-32;48;-32
+04.01.2024 13:15;ADP Non-Farm Employment Change;USD;;164;120;44;8;-13;8;-13;8;-13;8;-13;8;-37;8;-37;21;-37
+04.01.2024 13:30;Unemployment Claims;USD;;202;217;-15;0;-33;0;-33;0;-33;0;-33;2;-33;2;-33;33;-33
+05.01.2024 13:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,4;0,3;1;2;-90;2;-90;2;-90;2;-90;8;-90;55;-90;156;-90
+05.01.2024 13:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;216;168;48;2;-90;2;-90;2;-90;2;-90;8;-90;55;-90;156;-90
+05.01.2024 13:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;3,7;3,8;-1;2;-90;2;-90;2;-90;2;-90;8;-90;55;-90;156;-90
+05.01.2024 15:00;ISM Services PMI;USD;;50,6;52,5;-19;81;0;81;0;86;0;99;0;99;0;99;0;99;0
+11.01.2024 13:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y, USD_Unemployment Claims;0,3;0,3;0;45;-99;45;-99;45;-99;45;-99;45;-108;45;-117;45;-120
+11.01.2024 13:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y, USD_Unemployment Claims;0,3;0,2;1;45;-99;45;-99;45;-99;45;-99;45;-108;45;-117;45;-120
+11.01.2024 13:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m, USD_Unemployment Claims;3,4;3,2;2;45;-99;45;-99;45;-99;45;-99;45;-108;45;-117;45;-120
+11.01.2024 13:30;Unemployment Claims;USD;USD_Core CPI m/m, USD_CPI m/m, USD_CPI y/y;202;209;-7;45;-99;45;-99;45;-99;45;-99;45;-108;45;-117;45;-120
+12.01.2024 13:30;Core PPI m/m;USD;USD_PPI m/m;0,0;0,2;-2;38;0;38;0;38;0;38;0;38;-13;38;-13;72;-13
+12.01.2024 13:30;PPI m/m;USD;USD_Core PPI m/m;-0,1;0,1;-2;38;0;38;0;38;0;38;0;38;-13;38;-13;72;-13
+16.01.2024 13:30;Empire State Manufacturing Index;USD;;-43,7;-4,9;-388;34;-2;34;-2;34;-2;40;-2;40;-13;40;-13;40;-24
+17.01.2024 13:30;Core Retail Sales m/m;USD;USD_Retail Sales m/m;0,4;0,2;2;0;-38;0;-38;0;-38;0;-38;0;-38;0;-38;0;-48
+17.01.2024 13:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m;0,6;0,4;2;0;-38;0;-38;0;-38;0;-38;0;-38;0;-38;0;-48
+18.01.2024 13:30;Unemployment Claims;USD;;187;206;-19;15;-32;15;-32;15;-32;15;-32;15;-34;15;-34;15;-37
+19.01.2024 15:00;Prelim UoM Consumer Sentiment;USD;;78,8;69,8;90;18;-7;18;-7;18;-17;18;-22;18;-22;18;-22;18;-22
+24.01.2024 14:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;50,3;47,6;27;0;-43;0;-43;0;-46;0;-49;0;-61;0;-61;0;-71
+24.01.2024 14:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;52,9;51,4;15;0;-43;0;-43;0;-46;0;-49;0;-61;0;-61;0;-71
+25.01.2024 13:30;Advance GDP q/q;USD;USD_Unemployment Claims;3,3;2,0;13;17;-40;17;-40;21;-40;21;-40;21;-46;21;-70;21;-105
+25.01.2024 13:30;Unemployment Claims;USD;USD_Advance GDP q/q;214;199;15;17;-40;17;-40;21;-40;21;-40;21;-46;21;-70;21;-105
+26.01.2024 13:30;Core PCE Price Index m/m;USD;;0,2;0,2;0;24;-25;24;-25;24;-37;24;-37;24;-37;24;-37;24;-40
+30.01.2024 15:00;CB Consumer Confidence;USD;USD_JOLTS Job Openings;114,8;114,2;6;16;-36;16;-36;16;-36;16;-38;16;-46;16;-46;16;-46
+30.01.2024 15:00;JOLTS Job Openings;USD;USD_CB Consumer Confidence;9,03;8,73;30;16;-36;16;-36;16;-36;16;-38;16;-46;16;-46;16;-46
+31.01.2024 13:15;ADP Non-Farm Employment Change;USD;;107;148;-41;24;0;24;0;24;0;24;0;63;0;63;0;97;0
+31.01.2024 13:30;Employment Cost Index q/q;USD;;0,9;1,0;-1;49;-1;49;-1;49;-1;49;-1;49;-1;49;-1;83;-1
+31.01.2024 19:00;Federal Funds Rate;USD;USD_FOMC Statement;5,50;5,50;0;32;-115;32;-115;32;-115;32;-115;32;-115;37;-115;37;-115
+01.02.2024 13:30;Unemployment Claims;USD;;224;213;11;23;0;23;0;25;0;25;0;27;0;27;-4;37;-16
+01.02.2024 15:00;ISM Manufacturing PMI;USD;;49,1;47,2;19;0;-42;0;-42;3;-42;3;-42;11;-42;11;-42;81;-42
+02.02.2024 13:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,6;0,3;3;0;-128;0;-128;0;-147;0;-147;0;-162;0;-186;0;-201
+02.02.2024 13:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;353;187;166;0;-128;0;-128;0;-147;0;-147;0;-162;0;-186;0;-201
+02.02.2024 13:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;3,7;3,8;-1;0;-128;0;-128;0;-147;0;-147;0;-162;0;-186;0;-201
+02.02.2024 15:00;Revised UoM Consumer Sentiment;USD;;79,0;78,9;1;4;-30;4;-30;4;-35;4;-40;4;-51;4;-53;4;-56
+05.02.2024 15:00;ISM Services PMI;USD;;53,4;52,0;14;0;-34;0;-34;0;-34;0;-34;0;-34;0;-38;0;-38
+08.02.2024 13:30;Unemployment Claims;USD;;218;221;-3;0;-18;0;-18;0;-18;0;-33;0;-35;0;-35;17;-35
+13.02.2024 13:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y;0,4;0,3;1;46;-137;46;-137;46;-138;46;-162;46;-180;46;-185;46;-185
+13.02.2024 13:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y;0,3;0,2;1;46;-137;46;-137;46;-138;46;-162;46;-180;46;-185;46;-185
+13.02.2024 13:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m;3,1;2,9;2;46;-137;46;-137;46;-138;46;-162;46;-180;46;-185;46;-185
+15.02.2024 13:30;Core Retail Sales m/m;USD;USD_Empire State Manufacturing Index, USD_Retail Sales m/m, USD_Unemployment Claims;-0,6;0,2;-8;53;0;53;0;53;0;53;0;53;0;53;0;76;0
+15.02.2024 13:30;Empire State Manufacturing Index;USD;USD_Core Retail Sales m/m, USD_Retail Sales m/m, USD_Unemployment Claims;-2,4;-13,7;113;53;0;53;0;53;0;53;0;53;0;53;0;76;0
+15.02.2024 13:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m, USD_Empire State Manufacturing Index, USD_Unemployment Claims;-0,8;-0,2;-6;53;0;53;0;53;0;53;0;53;0;53;0;76;0
+15.02.2024 13:30;Unemployment Claims;USD;USD_Core Retail Sales m/m, USD_Empire State Manufacturing Index, USD_Retail Sales m/m;212;219;-7;53;0;53;0;53;0;53;0;53;0;53;0;76;0
+16.02.2024 13:30;Core PPI m/m;USD;USD_PPI m/m;0,5;0,1;4;1;-53;1;-53;1;-71;1;-71;1;-71;1;-71;9;-71
+16.02.2024 13:30;PPI m/m;USD;USD_Core PPI m/m;0,3;0,1;2;1;-53;1;-53;1;-71;1;-71;1;-71;1;-71;9;-71
+16.02.2024 15:00;Prelim UoM Consumer Sentiment;USD;;79,6;80,0;-4;14;-4;14;-4;27;-4;36;-4;43;-4;53;-4;53;-4
+22.02.2024 13:30;Unemployment Claims;USD;;201;217;-16;0;-24;0;-24;0;-24;0;-24;0;-34;0;-56;0;-71
+22.02.2024 14:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;51,5;50,5;10;24;0;24;0;24;-1;24;-1;24;-11;24;-11;24;-11
+22.02.2024 14:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;51,3;52,4;-11;24;0;24;0;24;-1;24;-1;24;-11;24;-11;24;-11
+27.02.2024 13:30;Durable Goods Orders m/m;USD;;-6,1;-4,9;-12;12;0;12;0;12;-7;12;-10;12;-11;12;-21;12;-30
+27.02.2024 15:00;CB Consumer Confidence;USD;;106,7;114,8;-81;15;-6;15;-6;15;-9;15;-9;15;-9;21;-16;34;-16
+28.02.2024 13:30;Prelim GDP q/q;USD;;3,2;3,3;-1;13;-12;13;-12;15;-12;15;-12;33;-12;37;-12;47;-12
+29.02.2024 13:30;Core PCE Price Index m/m;USD;USD_Unemployment Claims;0,4;0,4;0;37;-1;37;-1;37;-1;37;-2;37;-2;38;-2;54;-2
+29.02.2024 13:30;Unemployment Claims;USD;USD_Core PCE Price Index m/m;215;209;6;37;-1;37;-1;37;-1;37;-2;37;-2;38;-2;54;-2
+01.03.2024 15:00;ISM Manufacturing PMI;USD;USD_Revised UoM Consumer Sentiment;47,8;49,5;-17;45;0;45;0;45;0;45;0;81;0;83;0;83;0
+01.03.2024 15:00;Revised UoM Consumer Sentiment;USD;USD_ISM Manufacturing PMI;76,9;79,6;-27;45;0;45;0;45;0;45;0;81;0;83;0;83;0
+05.03.2024 15:00;ISM Services PMI;USD;;52,6;53,0;-4;61;0;61;0;61;0;61;0;61;0;61;0;61;0
+06.03.2024 13:15;ADP Non-Farm Employment Change;USD;;140;149;-9;7;-6;7;-6;7;-6;7;-6;17;-16;27;-16;31;-16
+06.03.2024 15:00;JOLTS Job Openings;USD;USD_Fed Chair Powell Testifies;8,86;8,80;6;3;-13;3;-13;3;-13;3;-13;9;-13;42;-13;55;-13
+07.03.2024 13:30;Unemployment Claims;USD;;217;217;0;9;-10;9;-10;9;-19;9;-19;9;-27;42;-27;76;-27
+08.03.2024 13:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,1;0,2;-1;64;-43;64;-43;64;-43;84;-43;84;-43;84;-43;84;-43
+08.03.2024 13:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;275;198;77;64;-43;64;-43;64;-43;84;-43;84;-43;84;-43;84;-43
+08.03.2024 13:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;3,9;3,7;2;64;-43;64;-43;64;-43;84;-43;84;-43;84;-43;84;-43
+12.03.2024 12:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y;0,4;0,3;1;12;-69;12;-69;12;-69;15;-69;15;-69;15;-69;15;-69
+12.03.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y;0,4;0,4;0;12;-69;12;-69;12;-69;15;-69;15;-69;15;-69;15;-69
+12.03.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m;3,2;3,1;1;12;-69;12;-69;12;-69;15;-69;15;-69;15;-69;15;-69
+14.03.2024 12:30;Core PPI m/m;USD;USD_Core Retail Sales m/m, USD_PPI m/m, USD_Retail Sales m/m, USD_Unemployment Claims;0,3;0,2;1;2;-25;2;-25;13;-25;20;-25;20;-25;20;-32;20;-68
+14.03.2024 12:30;Core Retail Sales m/m;USD;USD_Core PPI m/m, USD_PPI m/m, USD_Retail Sales m/m, USD_Unemployment Claims;0,3;0,5;-2;2;-25;2;-25;13;-25;20;-25;20;-25;20;-32;20;-68
+14.03.2024 12:30;PPI m/m;USD;USD_Core PPI m/m, USD_Core Retail Sales m/m, USD_Retail Sales m/m, USD_Unemployment Claims;0,6;0,3;3;2;-25;2;-25;13;-25;20;-25;20;-25;20;-32;20;-68
+14.03.2024 12:30;Retail Sales m/m;USD;USD_Core PPI m/m, USD_Core Retail Sales m/m, USD_PPI m/m, USD_Unemployment Claims;0,6;0,8;-2;2;-25;2;-25;13;-25;20;-25;20;-25;20;-32;20;-68
+14.03.2024 12:30;Unemployment Claims;USD;USD_Core PPI m/m, USD_Core Retail Sales m/m, USD_PPI m/m, USD_Retail Sales m/m;209;218;-9;2;-25;2;-25;13;-25;20;-25;20;-25;20;-32;20;-68
+15.03.2024 12:30;Empire State Manufacturing Index;USD;;-20,9;-7,0;-139;8;-5;8;-5;8;-6;8;-9;8;-11;9;-12;9;-14
+15.03.2024 14:00;Prelim UoM Consumer Sentiment;USD;;76,5;77,1;-6;9;-2;9;-2;9;-5;12;-5;16;-5;16;-5;16;-11
+20.03.2024 18:00;Federal Funds Rate;USD;USD_FOMC Economic Projections, USD_FOMC Statement;5,50;5,50;0;56;-1;56;-1;58;-1;58;-1;58;-1;106;-1;117;-1
+21.03.2024 12:30;Unemployment Claims;USD;;210;212;-2;1;-12;1;-12;1;-19;1;-23;1;-23;1;-42;1;-85
+21.03.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;52,5;51,8;7;7;-17;7;-17;7;-27;7;-27;7;-44;7;-53;7;-77
+21.03.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;51,7;52,0;-3;7;-17;7;-17;7;-27;7;-27;7;-44;7;-53;7;-77
+26.03.2024 14:00;CB Consumer Confidence;USD;;104,7;106,9;-22;4;-4;4;-4;4;-5;4;-10;4;-24;4;-31;4;-56
+28.03.2024 12:30;Final GDP q/q;USD;USD_Unemployment Claims;3,4;3,2;2;6;-5;6;-5;8;-5;13;-5;40;-5;59;-5;61;-5
+28.03.2024 12:30;Unemployment Claims;USD;USD_Final GDP q/q;210;212;-2;6;-5;6;-5;8;-5;13;-5;40;-5;59;-5;61;-5
+28.03.2024 14:00;Pending Home Sales m/m;USD;USD_Revised UoM Consumer Sentiment;1,6;1,4;2;12;-9;12;-9;12;-12;12;-14;12;-20;12;-31;12;-39
+28.03.2024 14:00;Revised UoM Consumer Sentiment;USD;USD_Pending Home Sales m/m;79,4;76,5;29;12;-9;12;-9;12;-12;12;-14;12;-20;12;-31;12;-39
+29.03.2024 12:30;Core PCE Price Index m/m;USD;;0,3;0,3;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0
+01.04.2024 14:00;ISM Manufacturing PMI;USD;;50,3;48,5;18;0;-48;0;-48;0;-53;0;-58;0;-60;0;-68;0;-85
+02.04.2024 14:00;JOLTS Job Openings;USD;;8,76;8,76;0;21;-16;21;-16;22;-16;22;-16;28;-16;28;-16;28;-16
+03.04.2024 12:15;ADP Non-Farm Employment Change;USD;;184;148;36;1;-11;1;-11;1;-16;1;-19;1;-22;3;-26;66;-26
+03.04.2024 14:00;ISM Services PMI;USD;;51,4;52,8;-14;57;0;57;0;57;0;57;0;57;0;68;0;82;0
+04.04.2024 12:30;Unemployment Claims;USD;;221;213;8;6;-3;6;-3;7;-3;12;-3;29;-3;34;-3;41;-3
+05.04.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,3;0,3;0;0;-88;0;-88;0;-88;0;-88;0;-92;0;-110;0;-110
+05.04.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;303;212;91;0;-88;0;-88;0;-88;0;-88;0;-92;0;-110;0;-110
+05.04.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;3,8;3,9;-1;0;-88;0;-88;0;-88;0;-88;0;-92;0;-110;0;-110
+10.04.2024 12:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y;0,4;0,3;1;3;-154;3;-154;3;-167;3;-169;3;-169;3;-200;3;-235
+10.04.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y;0,4;0,3;1;3;-154;3;-154;3;-167;3;-169;3;-169;3;-200;3;-235
+10.04.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m;3,5;3,4;1;3;-154;3;-154;3;-167;3;-169;3;-169;3;-200;3;-235
+11.04.2024 12:30;Core PPI m/m;USD;USD_PPI m/m, USD_Unemployment Claims;0,2;0,2;0;43;-27;43;-27;43;-27;43;-27;43;-27;62;-27;62;-29
+11.04.2024 12:30;PPI m/m;USD;USD_Core PPI m/m, USD_Unemployment Claims;0,2;0,3;-1;43;-27;43;-27;43;-27;43;-27;43;-27;62;-27;62;-29
+11.04.2024 12:30;Unemployment Claims;USD;USD_Core PPI m/m, USD_PPI m/m;211;216;-5;43;-27;43;-27;43;-27;43;-27;43;-27;62;-27;62;-29
+12.04.2024 14:00;Prelim UoM Consumer Sentiment;USD;;77,9;79,0;-11;9;-11;9;-11;9;-20;9;-27;9;-38;9;-38;18;-38
+15.04.2024 12:30;Core Retail Sales m/m;USD;USD_Empire State Manufacturing Index, USD_Retail Sales m/m;1,1;0,5;6;0;-42;0;-42;0;-44;0;-44;0;-44;15;-44;15;-59
+15.04.2024 12:30;Empire State Manufacturing Index;USD;USD_Core Retail Sales m/m, USD_Retail Sales m/m;-14,3;-5,2;-91;0;-42;0;-42;0;-44;0;-44;0;-44;15;-44;15;-59
+15.04.2024 12:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m, USD_Empire State Manufacturing Index;0,7;0,4;3;0;-42;0;-42;0;-44;0;-44;0;-44;15;-44;15;-59
+18.04.2024 12:30;Unemployment Claims;USD;;212;215;-3;7;-27;7;-27;7;-29;7;-29;7;-29;7;-33;7;-54
+23.04.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;49,9;52,0;-21;82;0;82;0;84;0;94;0;94;0;97;0;97;0
+23.04.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;50,9;52,0;-11;82;0;82;0;84;0;94;0;94;0;97;0;97;0
+25.04.2024 12:30;Advance GDP q/q;USD;USD_Unemployment Claims;1,6;2,5;-9;49;-45;49;-45;49;-52;49;-55;49;-63;49;-77;49;-77
+25.04.2024 12:30;Unemployment Claims;USD;USD_Advance GDP q/q;207;214;-7;49;-45;49;-45;49;-52;49;-55;49;-63;49;-77;49;-77
+25.04.2024 14:00;Pending Home Sales m/m;USD;;3,4;0,3;31;3;-15;3;-15;3;-16;12;-16;36;-16;41;-16;42;-16
+26.04.2024 12:30;Core PCE Price Index m/m;USD;;0,3;0,3;0;48;-3;48;-3;48;-3;48;-3;48;-20;48;-23;48;-53
+26.04.2024 14:00;Revised UoM Consumer Sentiment;USD;;77,2;77,9;-7;8;-8;8;-8;8;-10;8;-12;8;-28;8;-64;8;-69
+30.04.2024 12:30;Employment Cost Index q/q;USD;;1,2;1,0;2;0;-64;0;-64;0;-64;0;-64;0;-64;0;-64;0;-64
+30.04.2024 14:00;CB Consumer Confidence;USD;;97,0;104,0;-70;14;-2;14;-2;27;-2;27;-2;29;-2;29;-38;29;-45
+01.05.2024 12:15;ADP Non-Farm Employment Change;USD;;192;179;13;3;-7;3;-7;5;-7;9;-7;17;-7;21;-7;38;-7
+01.05.2024 13:45;Final Manufacturing PMI;USD;;50,0;49,9;1;6;0;6;0;8;0;12;0;32;-1;32;-1;32;-2
+01.05.2024 14:00;ISM Manufacturing PMI;USD;USD_JOLTS Job Openings;49,2;50,0;-8;24;-6;24;-6;24;-6;24;-9;24;-9;24;-9;24;-10
+01.05.2024 14:00;JOLTS Job Openings;USD;USD_ISM Manufacturing PMI;8,49;8,68;-19;24;-6;24;-6;24;-6;24;-9;24;-9;24;-9;24;-10
+01.05.2024 18:00;Federal Funds Rate;USD;USD_FOMC Statement;5,50;5,50;0;45;-6;45;-6;45;-6;45;-6;45;-6;118;-6;118;-6
+02.05.2024 12:30;Unemployment Claims;USD;;208;212;-4;1;-18;1;-18;12;-18;18;-18;19;-18;19;-22;19;-57
+03.05.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,2;0,3;-1;122;-2;122;-2;122;-2;122;-2;122;-2;122;-2;122;-2
+03.05.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;175;238;-63;122;-2;122;-2;122;-2;122;-2;122;-2;122;-2;122;-2
+03.05.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;3,9;3,8;1;122;-2;122;-2;122;-2;122;-2;122;-2;122;-2;122;-2
+03.05.2024 14:00;ISM Services PMI;USD;;49,4;52,0;-26;46;-22;46;-22;46;-25;46;-36;46;-52;46;-52;46;-52
+09.05.2024 12:30;Unemployment Claims;USD;;231;212;19;40;0;40;0;46;0;57;0;57;0;57;0;84;0
+10.05.2024 14:00;Prelim UoM Consumer Sentiment;USD;;67,4;76,3;-89;6;-16;6;-16;6;-16;6;-27;6;-51;6;-55;6;-55
+14.05.2024 12:30;Core PPI m/m;USD;USD_PPI m/m;0,5;0,2;3;0;-62;0;-62;10;-62;26;-62;30;-62;54;-62;55;-62
+14.05.2024 12:30;PPI m/m;USD;USD_Core PPI m/m;0,5;0,3;2;0;-62;0;-62;10;-62;26;-62;30;-62;54;-62;55;-62
+15.05.2024 12:30;Core CPI m/m;USD;USD_Core Retail Sales m/m, USD_CPI m/m, USD_CPI y/y, USD_Empire State Manufacturing Index, USD_Retail Sales m/m;0,3;0,3;0;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3
+15.05.2024 12:30;Core Retail Sales m/m;USD;USD_Core CPI m/m, USD_CPI m/m, USD_CPI y/y, USD_Empire State Manufacturing Index, USD_Retail Sales m/m;0,2;0,2;0;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3
+15.05.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_Core Retail Sales m/m, USD_CPI y/y, USD_Empire State Manufacturing Index, USD_Retail Sales m/m;0,3;0,4;-1;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3
+15.05.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_Core Retail Sales m/m, USD_CPI m/m, USD_Empire State Manufacturing Index, USD_Retail Sales m/m;3,4;3,4;0;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3
+15.05.2024 12:30;Empire State Manufacturing Index;USD;USD_Core CPI m/m, USD_Core Retail Sales m/m, USD_CPI m/m, USD_CPI y/y, USD_Retail Sales m/m;-15,6;-9,9;-57;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3
+15.05.2024 12:30;Retail Sales m/m;USD;USD_Core CPI m/m, USD_Core Retail Sales m/m, USD_CPI m/m, USD_CPI y/y, USD_Empire State Manufacturing Index;0,0;0,4;-4;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3;75;-3
+16.05.2024 12:30;Unemployment Claims;USD;;222;219;3;13;-9;13;-9;13;-14;13;-14;13;-14;13;-18;13;-27
+23.05.2024 12:30;Unemployment Claims;USD;;215;220;-5;15;-6;15;-6;15;-6;15;-7;15;-13;19;-13;19;-47
+23.05.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;50,9;50,0;9;0;-55;0;-55;0;-60;0;-60;0;-60;0;-60;0;-76
+23.05.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;54,8;51,2;36;0;-55;0;-55;0;-60;0;-60;0;-60;0;-60;0;-76
+24.05.2024 14:00;Revised UoM Consumer Sentiment;USD;;69,1;67,8;13;10;-1;10;-1;13;-1;13;-1;13;-4;13;-4;25;-4
+28.05.2024 14:00;CB Consumer Confidence;USD;;102,0;96,0;60;0;-10;0;-10;1;-14;3;-14;9;-14;25;-14;30;-14
+30.05.2024 12:30;Prelim GDP q/q;USD;USD_Unemployment Claims;1,3;1,2;1;19;-1;19;-1;21;-1;21;-1;33;-1;35;-1;46;-1
+30.05.2024 12:30;Unemployment Claims;USD;USD_Prelim GDP q/q;219;218;1;19;-1;19;-1;21;-1;21;-1;33;-1;35;-1;46;-1
+30.05.2024 14:00;Pending Home Sales m/m;USD;;-7,7;-1,1;-66;5;-3;5;-3;19;-3;19;-3;19;-3;30;-3;31;-3
+31.05.2024 12:30;Core PCE Price Index m/m;USD;;0,2;0,3;-1;30;-7;30;-7;36;-7;49;-7;60;-7;60;-7;60;-7
+03.06.2024 13:45;Final Manufacturing PMI;USD;;51,3;50,9;4;1;-6;1;-6;1;-7;1;-8;58;-8;60;-8;75;-8
+03.06.2024 14:00;ISM Manufacturing PMI;USD;;48,7;49,8;-11;43;0;43;0;56;0;60;0;62;0;62;0;77;0
+04.06.2024 14:00;JOLTS Job Openings;USD;;8,06;8,37;-31;24;-6;24;-6;24;-6;24;-10;24;-10;28;-10;31;-10
+05.06.2024 12:15;ADP Non-Farm Employment Change;USD;;152;173;-21;10;-2;10;-2;10;-2;10;-2;12;-2;28;-2;38;-22
+05.06.2024 14:00;ISM Services PMI;USD;;53,8;51,0;28;0;-53;0;-53;0;-53;0;-56;0;-56;0;-56;0;-56
+06.06.2024 12:30;Unemployment Claims;USD;;229;220;9;24;0;24;0;24;-9;24;-21;24;-31;24;-38;24;-38
+07.06.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,4;0,3;1;32;-130;32;-130;32;-141;32;-141;32;-150;32;-155;32;-173
+07.06.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;272;182;90;32;-130;32;-130;32;-141;32;-141;32;-150;32;-155;32;-173
+07.06.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;4,0;3,9;1;32;-130;32;-130;32;-141;32;-141;32;-150;32;-155;32;-173
+12.06.2024 12:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y;0,2;0,3;-1;121;0;121;0;121;0;121;0;127;0;137;0;155;0
+12.06.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y;0,0;0,1;-1;121;0;121;0;121;0;121;0;127;0;137;0;155;0
+12.06.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m;3,3;3,4;-1;121;0;121;0;121;0;121;0;127;0;137;0;155;0
+12.06.2024 18:00;Federal Funds Rate;USD;USD_FOMC Economic Projections, USD_FOMC Statement;5,50;5,50;0;14;-53;14;-53;14;-53;14;-53;14;-53;14;-66;14;-73
+13.06.2024 12:30;Core PPI m/m;USD;USD_PPI m/m, USD_Unemployment Claims;0,0;0,3;-3;49;-15;49;-15;49;-15;49;-15;49;-15;49;-15;49;-39
+13.06.2024 12:30;PPI m/m;USD;USD_Core PPI m/m, USD_Unemployment Claims;-0,2;0,1;-3;49;-15;49;-15;49;-15;49;-15;49;-15;49;-15;49;-39
+13.06.2024 12:30;Unemployment Claims;USD;USD_Core PPI m/m, USD_PPI m/m;242;225;17;49;-15;49;-15;49;-15;49;-15;49;-15;49;-15;49;-39
+14.06.2024 14:00;Prelim UoM Consumer Sentiment;USD;;65,6;72,1;-65;11;-3;11;-3;22;-3;22;-3;27;-3;37;-3;61;-3
+17.06.2024 12:30;Empire State Manufacturing Index;USD;;-6,0;-12,5;65;0;-10;0;-10;0;-10;0;-10;0;-14;14;-14;14;-14
+18.06.2024 12:30;Core Retail Sales m/m;USD;USD_Retail Sales m/m;-0,1;0,2;-3;39;0;39;0;39;0;39;0;39;0;41;0;93;0
+18.06.2024 12:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m;0,1;0,3;-2;39;0;39;0;39;0;39;0;39;0;41;0;93;0
+20.06.2024 12:30;Unemployment Claims;USD;;238;235;3;13;-3;13;-3;13;-10;13;-14;13;-14;13;-16;13;-16
+21.06.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;51,7;51,0;7;0;-35;0;-35;0;-35;0;-35;0;-35;5;-35;5;-35
+21.06.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;55,1;53,4;17;0;-35;0;-35;0;-35;0;-35;0;-35;5;-35;5;-35
+25.06.2024 14:00;CB Consumer Confidence;USD;;100,4;100,0;4;2;-14;2;-14;2;-25;2;-25;2;-25;2;-25;14;-25
+26.06.2024 14:00;New Home Sales;USD;;619;636;-17;20;0;20;0;20;0;24;0;28;0;43;0;43;0
+27.06.2024 12:30;Final GDP q/q;USD;USD_Unemployment Claims;1,4;1,4;0;13;-13;13;-13;34;-13;35;-13;39;-13;46;-13;48;-13
+27.06.2024 12:30;Unemployment Claims;USD;USD_Final GDP q/q;233;236;-3;13;-13;13;-13;34;-13;35;-13;39;-13;46;-13;48;-13
+27.06.2024 14:00;Pending Home Sales m/m;USD;;-2,1;0,6;-27;9;-6;9;-6;9;-10;9;-10;9;-27;9;-27;9;-42
+28.06.2024 12:30;Core PCE Price Index m/m;USD;;0,1;0,1;0;35;-17;35;-17;35;-17;35;-17;35;-17;35;-18;35;-23
+01.07.2024 14:00;ISM Manufacturing PMI;USD;;48,5;49,2;-7;38;0;38;0;38;-3;38;-17;38;-31;38;-55;38;-72
+02.07.2024 14:00;JOLTS Job Openings;USD;;8,14;7,96;18;8;-25;8;-25;8;-31;8;-38;8;-38;8;-38;8;-38
+03.07.2024 12:15;ADP Non-Farm Employment Change;USD;;150;163;-13;17;-2;17;-2;18;-2;21;-2;43;-2;48;-2;116;-2
+03.07.2024 12:30;Unemployment Claims;USD;;238;234;4;10;0;10;0;21;0;26;0;26;0;39;0;103;0
+03.07.2024 14:00;ISM Services PMI;USD;;48,8;52,6;-38;43;0;43;0;43;0;50;0;54;0;54;0;54;0
+05.07.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,3;0,3;0;30;-61;30;-61;30;-61;30;-61;30;-61;30;-61;30;-61
+05.07.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;206;191;15;30;-61;30;-61;30;-61;30;-61;30;-61;30;-61;30;-61
+05.07.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;4,1;4,0;1;30;-61;30;-61;30;-61;30;-61;30;-61;30;-61;30;-61
+11.07.2024 12:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y, USD_Unemployment Claims;0,1;0,2;-1;93;0;93;0;93;0;100;0;105;0;105;0;105;0
+11.07.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y, USD_Unemployment Claims;-0,1;0,1;-2;93;0;93;0;93;0;100;0;105;0;105;0;105;0
+11.07.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m, USD_Unemployment Claims;3,0;3,1;-1;93;0;93;0;93;0;100;0;105;0;105;0;105;0
+11.07.2024 12:30;Unemployment Claims;USD;USD_Core CPI m/m, USD_CPI m/m, USD_CPI y/y;222;236;-14;93;0;93;0;93;0;100;0;105;0;105;0;105;0
+12.07.2024 12:30;Core PPI m/m;USD;USD_PPI m/m;0,4;0,2;2;2;-27;2;-27;6;-27;6;-27;12;-27;23;-27;32;-27
+12.07.2024 12:30;PPI m/m;USD;USD_Core PPI m/m;0,2;0,1;1;2;-27;2;-27;6;-27;6;-27;12;-27;23;-27;32;-27
+12.07.2024 14:00;Prelim UoM Consumer Sentiment;USD;;66,0;68,5;-25;4;-8;4;-8;4;-8;8;-8;8;-10;23;-10;26;-10
+15.07.2024 12:30;Empire State Manufacturing Index;USD;;-6,6;-5,5;-11;1;-5;1;-5;3;-5;3;-5;9;-5;24;-5;26;-5
+16.07.2024 12:30;Core Retail Sales m/m;USD;USD_Retail Sales m/m;0,4;0,1;3;0;-35;0;-35;0;-39;0;-43;0;-53;0;-62;0;-62
+16.07.2024 12:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m;0,0;-0,3;3;0;-35;0;-35;0;-39;0;-43;0;-53;0;-62;0;-62
+18.07.2024 12:30;Unemployment Claims;USD;;243;229;14;11;-2;11;-2;11;-2;11;-4;11;-17;11;-34;11;-55
+24.07.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;49,5;51,7;-22;3;-17;3;-17;3;-17;3;-17;7;-17;11;-17;11;-21
+24.07.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;56,0;54,7;13;3;-17;3;-17;3;-17;3;-17;7;-17;11;-17;11;-21
+25.07.2024 12:30;Advance GDP q/q;USD;USD_Unemployment Claims;2,8;2,0;8;12;-39;12;-39;12;-39;12;-39;12;-39;12;-39;12;-42
+25.07.2024 12:30;Unemployment Claims;USD;USD_Advance GDP q/q;235;237;-2;12;-39;12;-39;12;-39;12;-39;12;-39;12;-39;12;-42
+26.07.2024 12:30;Core PCE Price Index m/m;USD;;0,2;0,2;0;14;-19;14;-19;16;-19;21;-19;21;-19;21;-19;27;-19
+30.07.2024 14:00;CB Consumer Confidence;USD;USD_JOLTS Job Openings;100,3;99,7;6;0;-24;0;-24;0;-24;0;-24;0;-25;0;-26;0;-26
+30.07.2024 14:00;JOLTS Job Openings;USD;USD_CB Consumer Confidence;8,18;8,02;16;0;-24;0;-24;0;-24;0;-24;0;-25;0;-26;0;-26
+31.07.2024 12:15;ADP Non-Farm Employment Change;USD;;122;147;-25;8;-9;8;-9;17;-9;28;-9;43;-9;43;-9;43;-9
+31.07.2024 12:30;Employment Cost Index q/q;USD;;0,9;1,0;-1;20;-3;20;-3;20;-7;20;-10;20;-10;20;-10;20;-10
+31.07.2024 14:00;Pending Home Sales m/m;USD;;4,8;1,4;34;7;-2;7;-2;7;-6;7;-7;7;-13;7;-52;7;-52
+31.07.2024 18:00;Federal Funds Rate;USD;USD_FOMC Statement;5,50;5,50;0;2;-29;2;-29;2;-29;2;-29;2;-29;28;-29;34;-29
+01.08.2024 12:30;Unemployment Claims;USD;;249;236;13;34;0;34;0;34;0;34;0;34;0;34;-8;54;-8
+01.08.2024 14:00;ISM Manufacturing PMI;USD;;46,8;48,8;-20;29;0;29;0;29;0;29;0;29;-16;29;-33;29;-40
+02.08.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,2;0,3;-1;85;0;85;0;85;0;85;0;132;0;139;0;173;0
+02.08.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;114;176;-62;85;0;85;0;85;0;85;0;132;0;139;0;173;0
+02.08.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;4,3;4,1;2;85;0;85;0;85;0;85;0;132;0;139;0;173;0
+05.08.2024 14:00;ISM Services PMI;USD;;51,4;51,1;3;1;-32;1;-32;1;-39;1;-39;1;-39;2;-45;15;-46
+08.08.2024 12:30;Unemployment Claims;USD;;233;241;-8;0;-45;0;-45;0;-50;0;-62;0;-76;0;-76;0;-96
+13.08.2024 12:30;Core PPI m/m;USD;USD_PPI m/m;0,0;0,2;-2;53;0;53;0;53;0;53;0;53;0;54;0;67;0
+13.08.2024 12:30;PPI m/m;USD;USD_Core PPI m/m;0,1;0,2;-1;53;0;53;0;53;0;53;0;53;0;54;0;67;0
+14.08.2024 12:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y;0,2;0,2;0;31;-39;31;-39;31;-39;31;-39;31;-39;35;-39;38;-39
+14.08.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y;0,2;0,2;0;31;-39;31;-39;31;-39;31;-39;31;-39;35;-39;38;-39
+14.08.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m;2,9;3,0;-1;31;-39;31;-39;31;-39;31;-39;31;-39;35;-39;38;-39
+15.08.2024 12:30;Core Retail Sales m/m;USD;USD_Retail Sales m/m, USD_Unemployment Claims;0,4;0,1;3;0;-81;0;-81;0;-100;0;-113;0;-120;0;-125;0;-125
+15.08.2024 12:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m, USD_Unemployment Claims;1,0;0,4;6;0;-81;0;-81;0;-100;0;-113;0;-120;0;-125;0;-125
+15.08.2024 12:30;Unemployment Claims;USD;USD_Core Retail Sales m/m, USD_Retail Sales m/m;227;236;-9;0;-81;0;-81;0;-100;0;-113;0;-120;0;-125;0;-125
+22.08.2024 12:30;Unemployment Claims;USD;;232;232;0;19;-11;19;-11;19;-11;19;-11;24;-11;24;-11;24;-66
+22.08.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;48,0;49,5;-15;0;-23;0;-23;0;-29;0;-36;0;-53;0;-64;0;-64
+22.08.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;55,2;54,0;12;0;-23;0;-23;0;-29;0;-36;0;-53;0;-64;0;-64
+27.08.2024 14:00;CB Consumer Confidence;USD;;103,3;100,9;24;3;-7;3;-7;6;-11;6;-11;6;-11;6;-11;6;-19
+29.08.2024 12:30;Prelim GDP q/q;USD;USD_Unemployment Claims;3,0;2,8;2;12;-43;12;-43;12;-43;12;-45;12;-45;12;-45;12;-73
+29.08.2024 12:30;Unemployment Claims;USD;USD_Prelim GDP q/q;231;232;-1;12;-43;12;-43;12;-43;12;-45;12;-45;12;-45;12;-73
+30.08.2024 12:30;Core PCE Price Index m/m;USD;;0,2;0,2;0;9;-6;9;-6;9;-25;9;-35;9;-52;9;-59;9;-59
+03.09.2024 14:00;ISM Manufacturing PMI;USD;;47,2;47,5;-3;29;-21;29;-21;29;-21;29;-28;29;-50;29;-50;29;-53
+04.09.2024 14:00;JOLTS Job Openings;USD;;7,67;8,09;-42;57;-1;57;-1;57;-1;57;-1;57;-1;75;-1;75;-1
+05.09.2024 12:15;ADP Non-Farm Employment Change;USD;;99;144;-45;27;0;27;0;36;0;36;0;36;-6;36;-29;38;-38
+05.09.2024 12:30;Unemployment Claims;USD;;227;231;-4;2;-23;2;-23;2;-27;2;-35;2;-58;2;-58;9;-67
+05.09.2024 14:00;ISM Services PMI;USD;;51,5;51,3;2;0;-46;0;-46;0;-48;0;-48;0;-48;0;-62;0;-62
+06.09.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,4;0,3;1;101;-53;101;-53;101;-53;101;-53;101;-53;101;-53;101;-79
+06.09.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;142;164;-22;101;-53;101;-53;101;-53;101;-53;101;-53;101;-53;101;-79
+06.09.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;4,2;4,2;0;101;-53;101;-53;101;-53;101;-53;101;-53;101;-53;101;-79
+11.09.2024 12:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y;0,3;0,2;1;0;-63;0;-63;0;-64;0;-73;0;-80;0;-80;0;-80
+11.09.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y;0,2;0,2;0;0;-63;0;-63;0;-64;0;-73;0;-80;0;-80;0;-80
+11.09.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m;2,5;2,5;0;0;-63;0;-63;0;-64;0;-73;0;-80;0;-80;0;-80
+12.09.2024 12:30;Core PPI m/m;USD;USD_PPI m/m, USD_Unemployment Claims;0,3;0,2;1;12;-18;12;-18;14;-18;19;-18;24;-18;41;-18;41;-18
+12.09.2024 12:30;PPI m/m;USD;USD_Core PPI m/m, USD_Unemployment Claims;0,2;0,1;1;12;-18;12;-18;14;-18;19;-18;24;-18;41;-18;41;-18
+12.09.2024 12:30;Unemployment Claims;USD;USD_Core PPI m/m, USD_PPI m/m;230;227;3;12;-18;12;-18;14;-18;19;-18;24;-18;41;-18;41;-18
+17.09.2024 12:30;Core Retail Sales m/m;USD;USD_Retail Sales m/m;0,1;0,2;-1;20;-25;20;-25;20;-25;20;-28;20;-32;20;-38;20;-44
+17.09.2024 12:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m;0,1;-0,2;3;20;-25;20;-25;20;-25;20;-28;20;-32;20;-38;20;-44
+18.09.2024 18:00;Federal Funds Rate;USD;USD_FOMC Economic Projections, USD_FOMC Statement;5,00;5,25;-25;106;0;106;0;106;0;106;0;106;0;125;0;125;-61
+19.09.2024 12:30;Unemployment Claims;USD;;219;230;-11;0;-35;0;-35;0;-45;0;-46;0;-55;0;-57;0;-74
+23.09.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;47,0;48,6;-16;22;-25;22;-25;22;-25;22;-25;22;-33;23;-33;23;-33
+23.09.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;55,4;55,3;1;22;-25;22;-25;22;-25;22;-25;22;-33;23;-33;23;-33
+24.09.2024 14:00;CB Consumer Confidence;USD;;98,7;103,9;-52;13;-2;13;-2;30;-2;38;-2;48;-2;48;-2;48;-2
+26.09.2024 12:30;Final GDP q/q;USD;USD_Unemployment Claims;3,0;3,0;0;4;-35;4;-35;4;-45;4;-46;4;-46;4;-47;4;-69
+26.09.2024 12:30;Unemployment Claims;USD;USD_Final GDP q/q;218;224;-6;4;-35;4;-35;4;-45;4;-46;4;-46;4;-47;4;-69
+27.09.2024 12:30;Core PCE Price Index m/m;USD;;0,1;0,2;-1;36;-2;36;-2;38;-2;55;-2;91;-2;94;-2;94;-2
+01.10.2024 14:00;ISM Manufacturing PMI;USD;USD_JOLTS Job Openings;47,2;47,6;-4;13;-33;13;-33;16;-33;21;-33;28;-33;28;-33;28;-33
+01.10.2024 14:00;JOLTS Job Openings;USD;USD_ISM Manufacturing PMI;8,04;7,64;40;13;-33;13;-33;16;-33;21;-33;28;-33;28;-33;28;-33
+02.10.2024 12:15;ADP Non-Farm Employment Change;USD;;143;124;19;5;-20;5;-20;5;-20;5;-25;5;-40;5;-44;5;-52
+03.10.2024 12:30;Unemployment Claims;USD;;225;222;3;18;-13;18;-13;18;-15;18;-22;18;-22;18;-22;18;-64
+03.10.2024 14:00;ISM Services PMI;USD;;54,9;51,7;32;0;-60;0;-60;4;-60;4;-60;4;-60;4;-60;4;-60
+04.10.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,4;0,3;1;1;-133;1;-133;1;-133;1;-133;1;-145;1;-145;1;-145
+04.10.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;254;147;107;1;-133;1;-133;1;-133;1;-133;1;-145;1;-145;1;-145
+04.10.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;4,1;4,2;-1;1;-133;1;-133;1;-133;1;-133;1;-145;1;-145;1;-145
+10.10.2024 12:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y, USD_Unemployment Claims;0,3;0,2;1;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55
+10.10.2024 12:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y, USD_Unemployment Claims;0,2;0,1;1;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55
+10.10.2024 12:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m, USD_Unemployment Claims;2,4;2,3;1;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55
+10.10.2024 12:30;Unemployment Claims;USD;USD_Core CPI m/m, USD_CPI m/m, USD_CPI y/y;258;231;27;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55;44;-55
+11.10.2024 12:30;Core PPI m/m;USD;USD_PPI m/m;0,2;0,2;0;20;-7;20;-7;20;-16;20;-27;20;-29;20;-29;20;-29
+11.10.2024 12:30;PPI m/m;USD;USD_Core PPI m/m;0,0;0,1;-1;20;-7;20;-7;20;-16;20;-27;20;-29;20;-29;20;-29
+17.10.2024 12:30;Core Retail Sales m/m;USD;USD_Retail Sales m/m, USD_Unemployment Claims;0,5;0,1;4;0;-53;0;-53;0;-63;0;-63;0;-63;0;-108;0;-108
+17.10.2024 12:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m, USD_Unemployment Claims;0,4;0,3;1;0;-53;0;-53;0;-63;0;-63;0;-63;0;-108;0;-108
+17.10.2024 12:30;Unemployment Claims;USD;USD_Core Retail Sales m/m, USD_Retail Sales m/m;241;241;0;0;-53;0;-53;0;-63;0;-63;0;-63;0;-108;0;-108
+24.10.2024 12:30;Unemployment Claims;USD;;227;243;-16;0;-29;0;-29;0;-29;0;-29;0;-29;6;-29;17;-29
+24.10.2024 13:45;Flash Manufacturing PMI;USD;USD_Flash Services PMI;47,8;47,5;3;2;-17;2;-17;2;-17;2;-17;16;-17;16;-17;16;-17
+24.10.2024 13:45;Flash Services PMI;USD;USD_Flash Manufacturing PMI;55,3;55,0;3;2;-17;2;-17;2;-17;2;-17;16;-17;16;-17;16;-17
+29.10.2024 14:00;CB Consumer Confidence;USD;USD_JOLTS Job Openings;108,7;99,5;92;49;0;49;0;49;0;49;0;49;0;49;0;49;-7
+29.10.2024 14:00;JOLTS Job Openings;USD;USD_CB Consumer Confidence;7,44;7,98;-54;49;0;49;0;49;0;49;0;49;0;49;0;49;-7
+30.10.2024 12:15;ADP Non-Farm Employment Change;USD;;233;110;123;0;-33;0;-33;0;-37;0;-37;0;-46;0;-46;51;-46
+30.10.2024 12:30;Advance GDP q/q;USD;;2,8;3,0;-2;18;-9;18;-9;18;-9;18;-9;18;-9;22;-9;90;-9
+31.10.2024 12:30;Core PCE Price Index m/m;USD;USD_Employment Cost Index q/q, USD_Unemployment Claims;0,3;0,3;0;21;-21;21;-21;21;-21;22;-21;25;-21;25;-21;28;-47
+31.10.2024 12:30;Employment Cost Index q/q;USD;USD_Core PCE Price Index m/m, USD_Unemployment Claims;0,8;0,9;-1;21;-21;21;-21;21;-21;22;-21;25;-21;25;-21;28;-47
+31.10.2024 12:30;Unemployment Claims;USD;USD_Core PCE Price Index m/m, USD_Employment Cost Index q/q;216;229;-13;21;-21;21;-21;21;-21;22;-21;25;-21;25;-21;28;-47
+01.11.2024 12:30;Average Hourly Earnings m/m;USD;USD_Non-Farm Employment Change, USD_Unemployment Rate;0,4;0,3;1;71;-15;71;-15;86;-15;86;-15;86;-15;86;-15;86;-15
+01.11.2024 12:30;Non-Farm Employment Change;USD;USD_Average Hourly Earnings m/m, USD_Unemployment Rate;12;106;-94;71;-15;71;-15;86;-15;86;-15;86;-15;86;-15;86;-15
+01.11.2024 12:30;Unemployment Rate;USD;USD_Average Hourly Earnings m/m, USD_Non-Farm Employment Change;4,1;4,1;0;71;-15;71;-15;86;-15;86;-15;86;-15;86;-15;86;-15
+01.11.2024 14:00;ISM Manufacturing PMI;USD;;46,5;47,6;-11;19;-23;19;-23;19;-26;19;-26;19;-29;19;-40;19;-45
+05.11.2024 15:00;ISM Services PMI;USD;;56,0;53,8;22;0;-33;0;-33;0;-33;0;-33;4;-33;14;-33;30;-33
+07.11.2024 13:30;Unemployment Claims;USD;;221;223;-2;2;-15;2;-15;8;-15;8;-15;18;-15;25;-15;69;-15
+07.11.2024 19:00;Federal Funds Rate;USD;USD_FOMC Statement;4,75;4,75;0;11;-47;11;-47;11;-47;11;-47;11;-47;11;-63;22;-63
+13.11.2024 13:30;Core CPI m/m;USD;USD_CPI m/m, USD_CPI y/y;0,3;0,3;0;54;-3;54;-3;54;-3;54;-3;54;-7;54;-18;54;-145
+13.11.2024 13:30;CPI m/m;USD;USD_Core CPI m/m, USD_CPI y/y;0,2;0,2;0;54;-3;54;-3;54;-3;54;-3;54;-7;54;-18;54;-145
+13.11.2024 13:30;CPI y/y;USD;USD_Core CPI m/m, USD_CPI m/m;2,6;2,6;0;54;-3;54;-3;54;-3;54;-3;54;-7;54;-18;54;-145
+14.11.2024 13:30;Core PPI m/m;USD;USD_PPI m/m, USD_Unemployment Claims;0,3;0,3;0;10;-32;10;-32;10;-48;10;-48;10;-48;37;-48;78;-48
+14.11.2024 13:30;PPI m/m;USD;USD_Core PPI m/m, USD_Unemployment Claims;0,2;0,2;0;10;-32;10;-32;10;-48;10;-48;10;-48;37;-48;78;-48
+14.11.2024 13:30;Unemployment Claims;USD;USD_Core PPI m/m, USD_PPI m/m;217;224;-7;10;-32;10;-32;10;-48;10;-48;10;-48;37;-48;78;-48
+15.11.2024 13:30;Core Retail Sales m/m;USD;USD_Retail Sales m/m;0,1;0,3;-2;13;-59;13;-59;13;-59;13;-59;13;-59;13;-89;13;-121
+15.11.2024 13:30;Retail Sales m/m;USD;USD_Core Retail Sales m/m;0,4;0,3;1;13;-59;13;-59;13;-59;13;-59;13;-59;13;-89;13;-121

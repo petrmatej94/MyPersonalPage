@@ -4,10 +4,10 @@
 }
 
 .container {
-    margin: 10%;
+    margin: 5%;
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     min-height: 100px;
 }
 
@@ -35,11 +35,11 @@
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    aspect-ratio: 16/9;
 }
 
     .image-box img {
         width: 100%;
-        height: auto;
         object-fit: cover;
     }
 
@@ -50,23 +50,65 @@
         filter: blur(15px);
     }
 
-.box-text {
-    font-size: 1rem;
-    margin: 1rem;
-    color: #ffffff;
+
+.box-column {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
+    padding: 10px;
 }
 
-.github-link {
-    margin-left: auto;
-    text-decoration: none;
-    color: #ffd700; 
-    text-decoration: none; 
-    font-weight: bold; 
+.techs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
 }
+
+.tech {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    color: #fec576;
+    border: 2px solid #fec576;
+    border-radius: 25px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 3px;
+}
+
+    .tech:hover {
+        background-color: #fec576;
+        color: #ffffff;
+    }
+
+
+.link {
+    color: white;
+    background-color: #18274f;
+    text-decoration: none;
+    position: relative;
+    margin-top: 10px;
+}
+
+    .link i {
+        margin-left: 5px;
+        font-size: 0.7rem;
+        transition: transform 0.2s ease-in-out;
+    }
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 1.25rem 0;
+}
+
 
 @media (max-width: 1024px) {
     .container {

@@ -1,0 +1,277 @@
+﻿@page "/eventsimpactanalyzer"
+@rendermode InteractiveServer
+
+@inject IJSRuntime JSRuntime
+@inject CsvService CsvService
+
+@using MudBlazor
+@using MyPersonalPage.Extensions
+@using MyPersonalPage.Models
+@using MyPersonalPage.Services
+@using System.Globalization
+@using MoreLinq
+
+<PageTitle>Events Impact Analyzer</PageTitle>
+
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script src="js/tradingview.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+<MudThemeProvider @bind-IsDarkMode="@_useDarkMode" Theme="_theme" />
+<MudPopoverProvider />
+<MudDialogProvider />
+
+
+<div class="container">
+
+	<!-- Header box -->
+	<div class="box header">
+		<MudText Typo="Typo.h6">6E Futures - Events Impact Analyzer</MudText>
+	</div>
+
+
+	<!-- Chart box -->
+	<div class="box large-box">
+		<div id="tradingview-chart" style="width: 100%; height: 100%;"></div>
+	</div>
+
+
+	<!-- Box next to chart -->
+	<div class="box tall-box">
+		<MudText Typo="Typo.h6">Selected Unique Events</MudText>
+		<MudDivider Class="my-2" />
+		@if (Table != null)
+		{
+			UpdateFilteredItemsStats();
+			CategorizeData();
+			if (!string.IsNullOrEmpty(_searchString))
+			{
+				@foreach (var group in Table.FilteredItems.Select(i => i.EventName).ToHashSet().Take(10))
+				{
+					<MudText Typo="Typo.subtitle1">@group</MudText>
+				}
+			}
+			else
+			{
+				<MudText Typo="Typo.subtitle1">No events selected, search in the table first...</MudText>
+			}
+		}
+		else
+		{
+			<MudText>Search the data first...</MudText>
+		}
+	</div>
+
+
+	<!-- 4 side by side small boxes -->
+	<div class="box small-box">
+		<MudText Typo="Typo.h6">Average up move</MudText>
+		<MudText Typo="Typo.subtitle1">@_averageUp</MudText>
+		<MudDivider Class="my-2" />
+		<MudText Typo="Typo.h6">Median up move</MudText>
+		<MudText Typo="Typo.subtitle1">@_medianUp</MudText>
+
+	</div>
+	<div class="box small-box">
+		@if (_upTicksCategorized != null)
+		{
+			<MudChart ChartType="ChartType.Pie" Width="100px" Height="80px" InputData="@_upTicksCategorized.Values.ToArray()" InputLabels="@_upTicksCategorized.Keys.ToArray()"></MudChart>
+		}
+	</div>
+	<div class="box small-box">
+		<MudText Typo="Typo.h6">Average down move</MudText>
+		<MudText Typo="Typo.subtitle1">@_averageDown</MudText>
+		<MudDivider Class="my-2" />
+		<MudText Typo="Typo.h6">Median down move</MudText>
+		<MudText Typo="Typo.subtitle1">@_medianDown</MudText>
+	</div>
+	<div class="box small-box">
+		@if (_downTicksCategorized != null)
+		{
+			<MudChart ChartType="ChartType.Pie" Width="100px" Height="80px" InputData="@_downTicksCategorized.Values.ToArray()" InputLabels="@_downTicksCategorized.Keys.ToArray()"></MudChart>
+		}
+	</div>
+
+
+	<!-- Bottom full-width box -->
+	<div class="box full-width">
+		<ul>
+			@if (EventRows != null)
+			{
+				<MudTable @ref="Table" Items="EventRows" Striped="true" Dense="true" Hover="true" FixedHeader="true" Elevation="2" Filter="new Func<EventRow,bool>(FilterFunc)"
+				RowsPerPage="50" Breakpoint="Breakpoint.Sm" Height="400px">
+					<ToolBarContent>
+						<MudText Typo="Typo.h6">Events</MudText>
+						<MudSpacer />
+						<MudTextField @bind-Value="_searchString" Placeholder="Search" Immediate="true" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+					</ToolBarContent>
+					<PagerContent>
+						<MudTablePager />
+					</PagerContent>
+					<HeaderContent>
+						<MudTh><MudTableSortLabel SortBy="new Func<EventRow, object>(x=>x.Date)">Date</MudTableSortLabel></MudTh>
+						<MudTh>Event Name</MudTh>
+						<MudTh>Currency</MudTh>
+						<MudTh>Actual</MudTh>
+						<MudTh>Expected</MudTh>
+						<MudTh><MudTableSortLabel SortBy="new Func<EventRow, object>(x=>x.Diff)">Difference</MudTableSortLabel></MudTh>
+						<MudTh><MudTableSortLabel SortBy="new Func<EventRow, object>(x=>x.UpTicksIn_5m)">Up Ticks in 5m</MudTableSortLabel></MudTh>
+						<MudTh><MudTableSortLabel SortBy="new Func<EventRow, object>(x=>x.DownTicksIn_5m)">Down Ticks in 5m</MudTableSortLabel></MudTh>
+					</HeaderContent>
+					<RowTemplate>
+						<MudTd DataLabel="Date">@context.Date.ToString("dd.MM.yyyy HH:mm")</MudTd>
+						<MudTd DataLabel="Event Name">@context.EventName</MudTd>
+						<MudTd DataLabel="Currency">@context.Currency</MudTd>
+						<MudTd DataLabel="Actual">@context.Actual</MudTd>
+						<MudTd DataLabel="Expected">@context.Expected</MudTd>
+						<MudTd DataLabel="Difference"
+						Style="@(context.Expected - context.Actual >= 0 ? "background-color: rgba(0,255,0,0.2);" : "background-color: rgba(255,0,0,0.2);")">
+							@Math.Round(context.Expected - context.Actual, 2)
+						</MudTd>
+						<MudTd DataLabel="Up Ticks In 5m" Style="@GetBackgroundClass(context.UpTicksIn_5m)">@context.UpTicksIn_5m</MudTd>
+						<MudTd DataLabel="Down Ticks In 5m" Style="@GetBackgroundClass(context.DownTicksIn_5m)">@context.DownTicksIn_5m</MudTd>
+					</RowTemplate>
+					<NoRecordsContent>
+						<MudText>No matching records found</MudText>
+					</NoRecordsContent>
+					<LoadingContent>
+						<MudText>Loading...</MudText>
+					</LoadingContent>
+				</MudTable>
+			}
+			else
+			{
+				<MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+			}
+		</ul>
+	</div>
+</div>
+
+
+
+@code {
+	private List<EventRow> EventRows;
+	private MudTable<EventRow> Table;
+	private string _searchString = string.Empty;
+
+	private int _averageUp;
+	private int _medianUp;
+	private int _averageDown;
+	private int _medianDown;
+
+	private Dictionary<string, double> _upTicksCategorized;
+	private Dictionary<string, double> _downTicksCategorized;
+
+	private bool _useDarkMode = true;
+	private MudTheme _theme = new MudTheme
+		{
+			PaletteDark = new PaletteDark
+			{
+				Surface = "#272f3d",
+				TextPrimary = "#ededed",
+				TableHover = "#0f0f0f",
+				TableStriped = "#272f3d"
+			}
+		};
+
+	private bool FilterFunc(EventRow element)
+	{
+		if (string.IsNullOrWhiteSpace(_searchString))
+			return true;
+		if (element.EventName.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+			return true;
+		if (element.Currency.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+			return true;
+		if (element.Date.ToString().Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+			return true;
+		if ($"{element.Date} {element.Currency} {element.EventName}".Contains(_searchString))
+			return true;
+		return false;
+	}
+
+	private string GetBackgroundClass(double value)
+	{
+		return value >= 0
+			? $"background-color: rgba(0,255,0,{GetIntensity(value)});"
+			: $"background-color: rgba(255,0,0,{GetIntensity(value)});";
+	}
+
+	private string GetIntensity(double value)
+	{
+		return (Math.Min(9, Math.Max(1, Math.Ceiling(Math.Abs(value) / 10))) / 10.0)
+			.ToString(CultureInfo.InvariantCulture);
+	}
+
+	private void UpdateFilteredItemsStats()
+	{
+		if (Table?.FilteredItems == null || !Table.FilteredItems.Any())
+		{
+			_averageUp = _medianUp = _averageDown = _medianDown = 0;
+			return;
+		}
+
+		var groupedItems = Table.FilteredItems.GroupBy(@e => e.Date).ToDictionary(group => group.Key, group => group.ToList());
+		var upTicks = groupedItems.Select(d => d.Value.FirstOrDefault().UpTicksIn_5m);
+		var downTicks = groupedItems.Select(d => d.Value.FirstOrDefault().DownTicksIn_5m);
+
+		_averageUp = (int)upTicks.Average();
+		_medianUp = (int)upTicks.Median();
+		_averageDown = (int)downTicks.Average();
+		_medianDown = (int)downTicks.Median();
+	}
+
+	private void CategorizeData()
+	{
+		var uniqueTicks = Table.FilteredItems
+			.GroupBy(e => e.Date)
+			.Select(group => new
+			{
+				Date = group.Key,
+				UpTicks = group.First().UpTicksIn_5m,
+				DownTicks = group.First().DownTicksIn_5m
+			})
+			.ToList();
+
+		_upTicksCategorized = uniqueTicks
+			.Select(item => CategorizeValueToBucket(item.UpTicks))
+			.GroupBy(bucket => bucket)
+			.ToDictionary(group => group.Key, group => (double)group.Count());
+
+		_downTicksCategorized = uniqueTicks
+			.Select(item => CategorizeValueToBucket(item.DownTicks))
+			.GroupBy(bucket => bucket)
+			.ToDictionary(group => group.Key, group => (double)group.Count());
+	}
+
+	private string CategorizeValueToBucket(int value)
+	{
+		value = Math.Abs(value);
+		if (value <= 50) return "0-50";
+		if (value <= 100) return "50-100";
+		if (value <= 150) return "100-150";
+		return "200+";
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			string csvPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "USD_All.csv");
+			EventRows = await CsvService.GetDataAsync<EventRow>(csvPath);
+		}
+		catch (Exception ex)
+		{
+
+			Console.WriteLine($"Error loading CSV: {ex.Message}");
+		}
+	}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			await JSRuntime.InvokeVoidAsync("initializeTradingViewChart");
+		}
+	}
+}

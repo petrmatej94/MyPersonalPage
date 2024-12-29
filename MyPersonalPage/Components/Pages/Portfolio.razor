@@ -1,33 +1,52 @@
-﻿<div class="container">
+﻿@inject NavigationManager Navigation
+
+<div class="container">
 
 	<div class="box">
 		<div class="image-box">
-			<img src="images/thispage.png" alt="MyImage" />
+			<img src="images/thispage2.png" alt="MyImage" />
 		</div>
-		<div class="box-text">
-			<span>This page!</span>
-			<a href="https://github.com/petrmatej94/MyPersonalPage" target="_blank" class="github-link" rel="noopener noreferrer">
-				GitHub <i class="fas fa-up-right-from-square"></i>
-			</a>
+
+		<div class="box-column">
+			<h3>This page</h3>
+
+			<div class="techs">
+				<span class="tech">Blazor</span>
+				<span class="tech">HTML</span>
+				<span class="tech">CSS</span>
+				<span class="tech">Javascript</span>
+			</div>
+
+			<div class="techs links">
+				<a href="https://github.com/petrmatej94/MyPersonalPage" target="_blank" class="tech link" rel="noopener noreferrer">GitHub <i class="fas fa-up-right-from-square"></i></a>
+			</div>
 		</div>
 	</div>
 
 	<div class="box">
 		<div class="image-box">
-			<img class="blur" src="images\thispage.png" alt="MyImage" />
+			<img src="images\EventsImpactAnalyzer.png" alt="MyImage" />
 		</div>
-		<div class="box-text">
-			To be continued...
+
+		<div class="box-column">
+			<h3>Market Events Impact Analyzer</h3>
+
+			<div class="techs">
+				<span class="tech">Blazor</span>
+				<span class="tech">MudBlazor</span>
+				<span class="tech">C#</span>
+				<span class="tech">HTML</span>
+				<span class="tech">CSS</span>
+				<span class="tech">Javascript</span>
+			</div>
+
+			<div class="techs links">
+				<a href="@($"{Navigation.BaseUri}eventsimpactanalyzer")" target="_blank" class="tech link" rel="noopener noreferrer">Open Analyzer <i class="fas fa-up-right-from-square"></i></a>
+				<a href="https://github.com/petrmatej94/MyPersonalPage" target="_blank" class="tech link" rel="noopener noreferrer">GitHub <i class="fas fa-up-right-from-square"></i></a>
+			</div>
 		</div>
 	</div>
-	<div class="box">
-		<div class="image-box">
-			<img class="blur" src="images\thispage.png" alt="MyImage" />
-		</div>
-		<div class="box-text">
-			To be continued...
-		</div>
-	</div>
+
 	<div class="box">
 		<div class="image-box">
 			<img class="blur" src="images\thispage.png" alt="MyImage" />

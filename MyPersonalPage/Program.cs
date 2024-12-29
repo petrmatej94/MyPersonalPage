@@ -1,11 +1,18 @@
 using Microsoft.AspNetCore.Components;
+using MudBlazor;
+using MudBlazor.Services;
 using MyPersonalPage.Components;
+using MyPersonalPage.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddSingleton<CsvService>();
+builder.Services.AddMudServices();
+
 
 var app = builder.Build();
 
