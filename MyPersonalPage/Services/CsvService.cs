@@ -7,7 +7,7 @@ namespace MyPersonalPage.Services
 {
 	public class CsvService
 	{
-		public async Task<List<T>> GetDataAsync<T>(string csvPath)
+		public async Task<List<T>> GetDataAsync<T>(string csvPath, bool useDoubleConverter = true)
 		{
 			var helperConfig = new CsvConfiguration(CultureInfo.InvariantCulture)
 			{
@@ -19,7 +19,10 @@ namespace MyPersonalPage.Services
 			using var csvReader = new CsvReader(reader, helperConfig);
 
 			csvReader.Context.TypeConverterCache.AddConverter<DateTime>(new CustomDateTimeConverter());
-			csvReader.Context.TypeConverterCache.AddConverter<double>(new CustomDoubleConverter());
+			if(useDoubleConverter)
+			{
+				csvReader.Context.TypeConverterCache.AddConverter<double>(new CustomDoubleConverter());
+			}
 
 			return csvReader.GetRecords<T>().ToList();
 		}

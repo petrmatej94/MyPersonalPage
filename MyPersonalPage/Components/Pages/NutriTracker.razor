@@ -1,0 +1,391 @@
+﻿@page "/nutritracker"
+@rendermode InteractiveServer
+
+@inject IJSRuntime JSRuntime
+@inject CsvService CsvService
+
+@using MudBlazor
+@using MyPersonalPage.Extensions
+@using MyPersonalPage.Models
+@using MyPersonalPage.Services
+@using System.Globalization
+@using MoreLinq
+
+<PageTitle>NutriTracker</PageTitle>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+<MudThemeProvider @bind-IsDarkMode="@_useDarkMode" Theme="_theme" />
+<MudPopoverProvider />
+<MudDialogProvider />
+
+
+<div class="container">
+
+	<!-- Header box -->
+	<div class="box header">
+		<MudText Typo="Typo.h6">Nutrition Tracker</MudText>
+	</div>
+
+	<div class="box header">
+		<MudText Typo="Typo.h6">Moje cíle</MudText>
+
+		<MudForm @ref="form_inputs" @bind-IsValid="@success" @bind-Errors="@errors">
+			<MudGrid Spacing="2">
+				<MudItem xs="6" md="3">
+					<MudNumericField T="int"
+					Class="pa-2"
+					Label="Kalorie (kcal)"
+					Required="true"
+					RequiredError="Je potřeba zadat množství!"
+					Immediate="true"
+					Variant="Variant.Outlined"
+					@bind-Value="@_caloriesTarget" />
+				</MudItem>
+
+				<MudItem xs="6" md="3">
+					<MudNumericField T="int"
+					Class="pa-2"
+					Label="Bílkoviny (g)"
+					Required="true"
+					RequiredError="Je potřeba zadat množství!"
+					Immediate="true"
+					Variant="Variant.Outlined"
+					@bind-Value="@_proteinsTarget" />
+				</MudItem>
+
+				<MudItem xs="6" md="3">
+					<MudNumericField T="int"
+					Class="pa-2"
+					Label="Tuky (g)"
+					Required="true"
+					RequiredError="Je potřeba zadat množství!"
+					Immediate="true"
+					Variant="Variant.Outlined"
+					@bind-Value="@_fatsTarget" />
+				</MudItem>
+
+				<MudItem xs="6" md="3">
+					<MudNumericField T="int"
+					Class="pa-2"
+					Label="Sacharidy (g)"
+					Required="true"
+					RequiredError="Je potřeba zadat množství!"
+					Immediate="true"
+					Variant="Variant.Outlined"
+					@bind-Value="@_carbsTarget" />
+				</MudItem>
+			</MudGrid>
+		</MudForm>
+	</div>
+
+	<div class="box input-box">
+		<MudText Typo="Typo.h6">Výběr potravin</MudText>
+
+		<MudForm @ref="form" @bind-IsValid="@success" @bind-Errors="@errors">
+			<MudAutocomplete T="string"
+			Class="pa-2"
+			Label="Vyhledat potravinu"
+			Placeholder="Zadejte název potraviny"
+			SearchFunc="SearchFood"
+			Value="@SearchValue"
+			ValueChanged="@OnFoodSelected"
+			Clearable="true"
+			ResetValueOnEmptyText="true"
+			Immediate="true"
+			Required="true"
+			Variant="Variant.Outlined" />
+
+			<MudNumericField T="int?"
+			Class="pa-2"
+			Label="Množství (g nebo ml)"
+			Required="true"
+			RequiredError="Je potřeba zadat množství!"
+			Validation="@(new Func<int?, string>(value => ValidateQuantity(value)))"
+			Immediate="true"
+			Variant="Variant.Outlined"
+			@bind-Value="@Quantity" />
+
+			<MudPaper Class="pa-4">
+				<MudButton Variant="Variant.Filled"
+				Color="Color.Primary"
+				DropShadow="false"
+				OnClick="@AddFoodToList">
+					Přidat na seznam
+				</MudButton>
+			</MudPaper>
+
+		</MudForm>
+	</div>
+
+	<div class="box input-box">
+		<MudDataGrid T="SelectedFood" Items="@SelectedFoods" ReadOnly="false" CommittedItemChanges="OnCommitedGridChanges"
+		EditMode="DataGridEditMode.Cell" Bordered="true" Dense="true" FixedHeader="true" Height="300px">
+
+			<Columns>
+				<PropertyColumn Property="x => x.BaseData.FoodName" Title="Název potraviny" Editable="false" />
+
+				<PropertyColumn Property="x => x.Quantity" Title="Množství (g/ml)">
+					<FooterTemplate>
+						@($"{context.Items.Sum(x => x.Quantity):F1}")
+					</FooterTemplate>
+				</PropertyColumn>
+
+				<PropertyColumn Property="x => x.Calories" Title="Kalorie (kcal)" Editable="false">
+					<FooterTemplate>
+						@($"{context.Items.Sum(x => x.Calories):F1}")
+					</FooterTemplate>
+				</PropertyColumn>
+
+				<PropertyColumn Property="x => x.Proteins" Title="Bílkoviny (g)" Editable="false">
+					<FooterTemplate>
+						@($"{context.Items.Sum(x => x.Proteins):F1}")
+					</FooterTemplate>
+				</PropertyColumn>
+
+				<PropertyColumn Property="x => x.Fats" Title="Tuky (g)" Editable="false">
+					<FooterTemplate>
+						@($"{context.Items.Sum(x => x.Fats):F1}")
+					</FooterTemplate>
+				</PropertyColumn>
+
+				<PropertyColumn Property="x => x.Carbohydrates" Title="Sacharidy (g)" Editable="false">
+					<FooterTemplate>
+						@($"{context.Items.Sum(x => x.Carbohydrates):F1}")
+					</FooterTemplate>
+				</PropertyColumn>
+
+				<TemplateColumn>
+					<CellTemplate>
+						<MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" Size="Size.Large" OnClick="() => RemoveFromFoodList(context.Item)" />
+					</CellTemplate>
+				</TemplateColumn>
+
+			</Columns>
+
+		</MudDataGrid>
+	</div>
+
+
+	<!-- 4 side by side small boxes -->
+	<div class="box small-box">
+		<MudProgressCircular Color="Color.Warning" Value="@CalculatePercent(@_caloriesTarget, @_totalCalories)" Size="Size.Large" />
+		<MudText Typo="Typo.h6">Kalorie: @_totalCalories/@_caloriesTarget kcal</MudText>
+
+	</div>
+
+	<div class="box small-box">
+		<MudProgressCircular Color="Color.Success" Value="@CalculatePercent(_proteinsTarget, @_totalProteins)" Size="Size.Large" />
+		<MudText Typo="Typo.h6">Bílkoviny: @_totalProteins/@_proteinsTarget g</MudText>
+
+	</div>
+
+	<div class="box small-box">
+		<MudProgressCircular Color="Color.Info" Value="@CalculatePercent(@_fatsTarget, @_totalFats)" Size="Size.Large" />
+		<MudText Typo="Typo.h6">Tuky: @_totalFats/@_fatsTarget g</MudText>
+	</div>
+
+	<div class="box small-box">
+		<MudProgressCircular Color="Color.Secondary" Value="@CalculatePercent(_carbsTarget, @_totalCarbs)" Size="Size.Large" />
+		<MudText Typo="Typo.h6">Sacharidy: @_totalCarbs/@_carbsTarget g</MudText>
+	</div>
+
+
+	<!-- Bottom full-width box -->
+	<div class="box full-width">
+
+		<MudPaper Class="pa-4">
+			<MudText Typo="Typo.h6">Vitamíny</MudText>
+			<MudDivider Class="mb-5 mt-2" />
+
+			<MudPaper Height="200px" Class="d-flex justify-space-around mud-width-full" Elevation="0">
+				@foreach (string vitamin in Vitamins)
+				{
+					var value = @GetConsumptionValue(@vitamin);
+					<MudPaper Class="d-flex flex-column justify-center align-center mud-width-full" Elevation="0">
+						<MudProgressLinear Vertical="true" Color="Color.Primary" Size="Size.Large" Striped="true" Value="@value" />
+						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mt-2"><b>@vitamin (@value%)</b></MudText>
+					</MudPaper>
+				}
+			</MudPaper>
+
+			<MudDivider Class="mb-10 mt-10" />
+
+			<MudText Typo="Typo.h6">Minerály</MudText>
+			<MudDivider Class="mb-5 mt-2" />
+			<MudPaper Height="200px" Class="d-flex justify-space-around mud-width-full" Elevation="0">
+				@foreach (var (engName, czName) in Minerals)
+				{
+					var value = @GetConsumptionValue(@engName);
+					<MudPaper Class="d-flex flex-column justify-center align-center mud-width-full" Elevation="0">
+						<MudProgressLinear Vertical="true" Color="Color.Info" Size="Size.Large" Striped="true" Value="@value" />
+						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mt-2"><b>@czName (@value%)</b></MudText>
+					</MudPaper>
+				}
+			</MudPaper>
+
+			<MudDivider Class="mb-10 mt-10" />
+
+			<MudText Typo="Typo.h6">Ostatní</MudText>
+			<MudDivider Class="mb-5 mt-2" />
+			<MudPaper Height="200px" Class="d-flex justify-space-around mud-width-full" Elevation="0">
+				@foreach (string item in OtherNutritions)
+				{
+					var value = @GetConsumptionValue(@item);
+					<MudPaper Class="d-flex flex-column justify-center align-center mud-width-full" Elevation="0">
+						<MudProgressLinear Vertical="true" Color="Color.Warning" Size="Size.Large" Striped="true" Value="@value" />
+						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mt-2"><b>@item (@value%)</b></MudText>
+					</MudPaper>
+				}
+			</MudPaper>
+
+		</MudPaper>
+
+	</div>
+</div>
+
+
+
+@code {
+
+	private List<NutritionRow> NutritionRows = new();
+	private NutritionRow DailyRecommendedValues;
+	private Dictionary<string, double> DailyRecommendedValuesDict = new();
+	private List<SelectedFood> SelectedFoods = new();
+
+	private string SearchValue = "";
+	private int? Quantity;
+
+	private MudForm form_inputs;
+	private MudForm form;
+	private bool success;
+	private string[] errors;
+
+	private int _caloriesTarget = 3000;
+	private int _proteinsTarget = 160;
+	private int _fatsTarget = 320;
+	private int _carbsTarget = 50;
+	private double _totalCalories => Math.Round(SelectedFoods.Select(f => f.Calories).Sum(), 1);
+	private double _totalProteins => Math.Round(SelectedFoods.Select(f => f.Proteins).Sum(), 1);
+	private double _totalFats => Math.Round(SelectedFoods.Select(f => f.Fats).Sum(), 1);
+	private double _totalCarbs => Math.Round(SelectedFoods.Select(f => f.Carbohydrates).Sum(), 1);
+
+	private string[] Vitamins = ["A", "C", "D", "E", "K", "B1", "B2", "B3", "B5", "B6", "B7", "B9", "B12"];
+	private Dictionary<string, string> Minerals = new()
+	{
+		{ "Calcium", "Vápník" },
+		{ "Iron", "Železo" },
+		{ "Magnesium", "Hořčík" },
+		{ "Phosphorus", "Fosfor" },
+		{ "Potassium", "Draslík" },
+		{ "Zinc", "Zinek" },
+		{ "Selenium", "Selen" },
+		{ "Copper", "Měď" },
+		{ "Manganese", "Mangan" },
+		{ "Fluoride", "Fluor" },
+		{ "Chromium", "Chrom" },
+		{ "Molybdenum", "Molybden" }
+	};
+	private string[] OtherNutritions = ["Omega3", "Omega6"];
+
+	private bool _useDarkMode = true;
+	private MudTheme _theme = new MudTheme
+		{
+			PaletteDark = new PaletteDark
+			{
+				Surface = "#272f3d",
+				TextPrimary = "#ededed",
+				TableHover = "#0f0f0f",
+				TableStriped = "#272f3d"
+			}
+		};
+
+	private Task<IEnumerable<string>> SearchFood(string value, CancellationToken token)
+	{
+		if (string.IsNullOrWhiteSpace(value))
+			return Task.FromResult(NutritionRows.Select(n => n.FoodName).AsEnumerable());
+
+		var result = NutritionRows
+			.Where(n => n.FoodName.Contains(value, StringComparison.OrdinalIgnoreCase))
+			.Select(n => n.FoodName);
+
+		return Task.FromResult(result.AsEnumerable());
+	}
+
+	private void OnFoodSelected(string selectedFoodName)
+	{
+		SearchValue = selectedFoodName;
+	}
+
+	private async Task AddFoodToList()
+	{
+		await form.Validate();
+
+		if (!success || string.IsNullOrEmpty(SearchValue))
+			return;
+
+		NutritionRow? selectedFood = NutritionRows.FirstOrDefault(n => n.FoodName == SearchValue);
+		if (selectedFood != null)
+		{
+			SelectedFoods.Add(new SelectedFood(selectedFood.Value, Quantity.Value));
+
+			SearchValue = "";
+			Quantity = null;
+		}
+	}
+
+	private void RemoveFromFoodList(SelectedFood item)
+	{
+		SelectedFoods.Remove(item);
+		StateHasChanged();
+	}
+
+	private string ValidateQuantity(int? value)
+	{
+		if (value == null)
+			return "Je potřeba zadat množství!";
+
+		if (value < 0 || value > 10000)
+			return "Množství musí být mezi 0 a 10 000!";
+
+		return null;
+	}
+
+	private double CalculatePercent(double target, double value) => Math.Round((value / target) * 100, 0);
+
+	private double GetConsumptionValue(string item)
+	{
+		double ddd = DailyRecommendedValuesDict[item];
+		double totalConsumed = SelectedFoods
+			.Select(f => f.GetType().GetProperty(item).GetValue(f, null)).Sum(val => (double)val);
+
+		return CalculatePercent(ddd, totalConsumed);
+	}
+
+	private void OnCommitedGridChanges(object item)
+	{
+		StateHasChanged();
+	}
+
+	protected override async Task OnInitializedAsync()
+	{
+		try
+		{
+			string csvPath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "NutritionData.csv");
+			NutritionRows = await CsvService.GetDataAsync<NutritionRow>(csvPath, false);
+			DailyRecommendedValues = NutritionRows.FirstOrDefault(n => n.FoodName == "DDD");
+			NutritionRows = NutritionRows.Where(n => n.FoodName != "DDD").ToList();
+
+			DailyRecommendedValuesDict = typeof(NutritionRow)
+				.GetProperties()
+				.Where(prop => prop.PropertyType == typeof(double))
+				.ToDictionary(prop => prop.Name, prop => (double)prop.GetValue(DailyRecommendedValues));
+
+		}
+		catch (Exception ex)
+		{
+			Console.WriteLine($"Error loading CSV: {ex.Message}");
+			throw;
+		}
+	}
+}

@@ -19,4 +19,10 @@
     <PackageReference Include="MudBlazor.ThemeManager" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Components\Pages\NutriTracker.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>
