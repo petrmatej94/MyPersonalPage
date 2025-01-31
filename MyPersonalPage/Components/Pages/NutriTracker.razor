@@ -9,6 +9,7 @@
 @using MyPersonalPage.Services
 @using System.Globalization
 @using MoreLinq
+@using System.Text
 
 <PageTitle>NutriTracker</PageTitle>
 
@@ -202,6 +203,7 @@
 				{
 					var value = @GetConsumptionValue(@vitamin);
 					<MudPaper Class="d-flex flex-column justify-center align-center mud-width-full" Elevation="0">
+						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mb-2"><b>@GetTotalConsumed(vitamin)/@DailyRecommendedValuesDict[vitamin]</b></MudText>
 						<MudProgressLinear Vertical="true" Color="Color.Primary" Size="Size.Large" Striped="true" Value="@value" />
 						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mt-2"><b>@vitamin (@value%)</b></MudText>
 					</MudPaper>
@@ -217,6 +219,7 @@
 				{
 					var value = @GetConsumptionValue(@engName);
 					<MudPaper Class="d-flex flex-column justify-center align-center mud-width-full" Elevation="0">
+						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mb-2"><b>@GetTotalConsumed(engName)/@DailyRecommendedValuesDict[engName]</b></MudText>
 						<MudProgressLinear Vertical="true" Color="Color.Info" Size="Size.Large" Striped="true" Value="@value" />
 						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mt-2"><b>@czName (@value%)</b></MudText>
 					</MudPaper>
@@ -232,6 +235,7 @@
 				{
 					var value = @GetConsumptionValue(@item);
 					<MudPaper Class="d-flex flex-column justify-center align-center mud-width-full" Elevation="0">
+						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mb-2"><b>@GetTotalConsumed(item)/@DailyRecommendedValuesDict[item]</b></MudText>
 						<MudProgressLinear Vertical="true" Color="Color.Warning" Size="Size.Large" Striped="true" Value="@value" />
 						<MudText Typo="Typo.caption" Color="Color.Dark" Class="mt-2"><b>@item (@value%)</b></MudText>
 					</MudPaper>
@@ -304,11 +308,34 @@
 		if (string.IsNullOrWhiteSpace(value))
 			return Task.FromResult(NutritionRows.Select(n => n.FoodName).AsEnumerable());
 
+		string normalizedValue = RemoveDiacritics(value).ToLower();
+
 		var result = NutritionRows
-			.Where(n => n.FoodName.Contains(value, StringComparison.OrdinalIgnoreCase))
+			.Where(n => RemoveDiacritics(n.FoodName).ToLower()
+				.Contains(normalizedValue)) 
 			.Select(n => n.FoodName);
 
 		return Task.FromResult(result.AsEnumerable());
+	}
+
+	private string RemoveDiacritics(string text)
+	{
+		if (string.IsNullOrEmpty(text))
+			return text;
+
+		var normalizedString = text.Normalize(NormalizationForm.FormD);
+		var stringBuilder = new StringBuilder();
+
+		foreach (var c in normalizedString)
+		{
+			var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+			if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+			{
+				stringBuilder.Append(c);
+			}
+		}
+
+		return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
 	}
 
 	private void OnFoodSelected(string selectedFoodName)
@@ -352,11 +379,18 @@
 
 	private double CalculatePercent(double target, double value) => Math.Round((value / target) * 100, 0);
 
+	private double GetTotalConsumed(string item)
+	{
+		double totalConsumed = SelectedFoods
+			.Select(f => f.GetType().GetProperty(item).GetValue(f, null)).Sum(val => (double)val);
+
+		return Math.Round(totalConsumed, 1);
+	}
+
 	private double GetConsumptionValue(string item)
 	{
 		double ddd = DailyRecommendedValuesDict[item];
-		double totalConsumed = SelectedFoods
-			.Select(f => f.GetType().GetProperty(item).GetValue(f, null)).Sum(val => (double)val);
+		double totalConsumed = GetTotalConsumed(item);
 
 		return CalculatePercent(ddd, totalConsumed);
 	}
